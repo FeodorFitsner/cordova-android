@@ -4,6 +4,8 @@ environment:
   - nodejs_version: "4"
   - nodejs_version: "6"
 
+image: Previous Visual Studio 2015
+
 init:
   - mkdir "%ANDROID_HOME%
   - cd "%ANDROID_HOME%"
