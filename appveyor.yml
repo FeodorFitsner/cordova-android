@@ -7,12 +7,12 @@ environment:
 image: Previous Visual Studio 2015
 
 init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - mkdir "%ANDROID_HOME%
   - cd "%ANDROID_HOME%"
   - appveyor DownloadFile "https://dl.google.com/android/repository/tools_r25.2.3-windows.zip"
   - 7z x "tools_r25.2.3-windows.zip" > nul
-  - cd "C:\projects\cordova-android"
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - cd "C:\projects\cordova-android"  
 
 install:
   - choco install gradle -version 3.4.1
@@ -36,3 +36,6 @@ test_script:
   - node --version
   - npm --version
   - npm test
+
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
