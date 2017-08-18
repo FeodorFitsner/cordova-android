@@ -14,6 +14,7 @@ init:
   
   - wusa /uninstall /quiet /norestart /kb:4033428
   - wusa /uninstall /quiet /norestart /kb:4025336
+  - ps: restart-comouter -f
   
   - mkdir "%ANDROID_HOME%
   - cd "%ANDROID_HOME%"
