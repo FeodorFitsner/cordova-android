@@ -10,7 +10,7 @@ image:
 #image: Previous Visual Studio 2015
 
 init:
-  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   
   - wusa /uninstall /kb:4033428
   - wusa /uninstall /kb:4025336
