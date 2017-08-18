@@ -1,8 +1,11 @@
 environment:
   ANDROID_HOME: "C:\\android"
-  matrix:
-  - nodejs_version: "4"
-  - nodejs_version: "6"
+  nodejs_version: "4"
+
+image:
+- Previous Visual Studio 2015
+- Visual Studio 2015
+
 
 #image: Previous Visual Studio 2015
 
@@ -27,11 +30,11 @@ install:
   - ps: for($i=0;$i -lt 30;$i++) { $response += "y`n"}; $response | cmd /c 'C:\android\tools\bin\sdkmanager.bat 2>&1' --update
   - cd test
   - gradle :wrapper -b build.gradle
-  - ps: get-process | findstr /psi "java"
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - cd ..
   - ps: Install-Product node $env:nodejs_version
   - npm install
-  - ps: get-process | findstr /psi "java"
+  
 
 build: off
 
