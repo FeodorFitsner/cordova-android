@@ -34,7 +34,8 @@ install:
   - ps: for($i=0;$i -lt 30;$i++) { $response += "y`n"}; $response | cmd /c 'C:\android\tools\bin\sdkmanager.bat 2>&1' --update
   - cd test
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  - gradle :wrapper -b build.gradle -max-workers 1
+  - NetSh Advfirewall set allprofiles state off
+  - gradle :wrapper -b build.gradle
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - cd ..
   - ps: Install-Product node $env:nodejs_version
