@@ -31,6 +31,7 @@ install:
   - cd ..
   - ps: Install-Product node $env:nodejs_version
   - npm install
+  - ps: get-process | findstr /psi "java"
 
 build: off
 
