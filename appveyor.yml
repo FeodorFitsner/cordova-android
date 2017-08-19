@@ -37,7 +37,7 @@ install:
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   #- NetSh Advfirewall set allprofiles state off
   - ps: Get-WmiObject Win32_Process -Filter "name = 'adb.exe'"
-  - gradle :wrapper -b build.gradl
+  - cmd /c gradle :wrapper -b build.gradle
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - cd ..
   - ps: Install-Product node $env:nodejs_version
