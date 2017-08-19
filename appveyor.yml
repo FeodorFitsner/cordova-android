@@ -39,7 +39,7 @@ install:
   #- ps: Get-WmiObject Win32_Process -Filter "name = 'adb.exe'"  
   
   - echo gradle :wrapper -b build.gradle > rungradle.cmd
-  - cmd /c rungradle.cmd
+  - ps: cmd /c rungradle.cmd
   - cd ..
   - ps: Install-Product node $env:nodejs_version
   - npm install
