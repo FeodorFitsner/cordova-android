@@ -2,6 +2,7 @@ environment:
   ANDROID_HOME: "C:\\android"
   nodejs_version: "4"
 
+
 image:
 - Previous Visual Studio 2015
 #- Visual Studio 2015
