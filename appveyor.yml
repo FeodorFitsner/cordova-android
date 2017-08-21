@@ -10,6 +10,7 @@ image:
 #image: Previous Visual Studio 2015
 
 init:
+  - appveyor version
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   
   #- wusa /uninstall /quiet /norestart /kb:4033428
