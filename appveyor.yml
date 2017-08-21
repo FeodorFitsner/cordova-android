@@ -3,8 +3,8 @@ environment:
   nodejs_version: "4"
 
 image:
-#- Previous Visual Studio 2015
-- Visual Studio 2015
+- Previous Visual Studio 2015
+#- Visual Studio 2015
 
 
 #image: Previous Visual Studio 2015
