@@ -42,6 +42,7 @@ install:
   
   - echo gradle :wrapper -b build.gradle > rungradle.cmd
   - where gradle
+  - dir C:\ProgramData\chocolatey\bin
   - rungradle.cmd
   - cd ..
   - ps: Install-Product node $env:nodejs_version
