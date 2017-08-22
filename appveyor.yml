@@ -11,6 +11,7 @@ image:
 
 init:
   - appveyor version
+  - ps: systeminfo
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   
   #- wusa /uninstall /quiet /norestart /kb:4033428
@@ -40,6 +41,7 @@ install:
   #- ps: Get-WmiObject Win32_Process -Filter "name = 'adb.exe'"  
   
   - echo gradle :wrapper -b build.gradle > rungradle.cmd
+  - where gradle
   - rungradle.cmd
   - cd ..
   - ps: Install-Product node $env:nodejs_version
