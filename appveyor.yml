@@ -41,7 +41,7 @@ install:
   
   - echo gradle :wrapper -b build.gradle > rungradle.cmd
   #- dir C:\ProgramData\chocolatey\lib\gradle\tools\gradle-3.4.1\bin
-  - set path=C:\ProgramData\chocolatey\lib\gradle\tools\gradle-3.4.1\bin;%path%
+  #- set path=C:\ProgramData\chocolatey\lib\gradle\tools\gradle-3.4.1\bin;%path%
   - where gradle
   - rungradle.cmd
   - cd ..
