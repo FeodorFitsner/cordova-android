@@ -41,8 +41,9 @@ install:
   #- ps: Get-WmiObject Win32_Process -Filter "name = 'adb.exe'"  
   
   - echo gradle :wrapper -b build.gradle > rungradle.cmd
-  - where gradle
   - dir C:\ProgramData\chocolatey\lib\gradle\tools\gradle-3.4.1\bin
+  - set path=C:\ProgramData\chocolatey\lib\gradle\tools\gradle-3.4.1\bin;%path%
+  - where gradle
   - rungradle.cmd
   - cd ..
   - ps: Install-Product node $env:nodejs_version
