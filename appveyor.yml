@@ -2,6 +2,16 @@ environment:
   ANDROID_HOME: "C:\\android"
   nodejs_version: "4"
 
+  matrix:
+  - step_name: 1
+  - step_name: 2
+  - step_name: 3
+  - step_name: 4
+  - step_name: 5
+  - step_name: 6
+  - step_name: 7
+  - step_name: 8  
+
 #image:
 #- Previous Visual Studio 2015
 #- Visual Studio 2015
