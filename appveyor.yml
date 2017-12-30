@@ -10,7 +10,15 @@ environment:
   - step_name: 5
   - step_name: 6
   - step_name: 7
-  - step_name: 8  
+  - step_name: 8
+  - step_name: 9
+  - step_name: 10
+  - step_name: 11
+  - step_name: 12
+  - step_name: 13
+  - step_name: 14
+  - step_name: 15
+  - step_name: 16 
 
 #image:
 #- Previous Visual Studio 2015
